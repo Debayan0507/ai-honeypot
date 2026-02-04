@@ -1,7 +1,7 @@
 import os
 from google import genai
 
-client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 def llm_scam_analysis(message: str) -> bool:
     prompt = f"""
@@ -19,3 +19,4 @@ Message:
 
     answer = response.text.strip().upper()
     return "YES" in answer
+
